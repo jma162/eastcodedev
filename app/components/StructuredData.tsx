@@ -1,8 +1,15 @@
 import Script from 'next/script';
 
+interface BreadcrumbItem {
+  "@type": "ListItem";
+  position: number;
+  name: string;
+  item: string;
+}
+
 interface StructuredDataProps {
   type: 'organization' | 'website' | 'service' | 'contact' | 'breadcrumb';
-  data?: any;
+  data?: BreadcrumbItem[];
 }
 
 export default function StructuredData({ type, data }: StructuredDataProps) {
