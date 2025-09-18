@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../lib/translations';
 
@@ -30,9 +31,11 @@ export default function Services() {
                   {language === 'zh' ? '微信扫码咨询' : 'Scan WeChat QR Code'}
                 </p>
                 <div className="bg-white bg-opacity-20 p-4 rounded-lg">
-                  <img 
+                  <Image 
                     src="/QRCode.png" 
                     alt={language === 'zh' ? '微信二维码' : 'WeChat QR Code'}
+                    width={128}
+                    height={128}
                     className="w-28 h-28 sm:w-32 sm:h-32"
                   />
                 </div>
@@ -520,9 +523,11 @@ export default function Services() {
                 {language === 'zh' ? '或微信扫码咨询' : 'Or scan WeChat QR Code'}
               </p>
               <div className="inline-block bg-white bg-opacity-20 p-3 rounded-lg">
-                <img 
+                <Image 
                   src="/QRCode.png" 
                   alt={language === 'zh' ? '微信二维码' : 'WeChat QR Code'}
+                  width={96}
+                  height={96}
                   className="w-20 h-20 sm:w-24 sm:h-24"
                 />
               </div>

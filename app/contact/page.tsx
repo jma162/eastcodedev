@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../lib/translations';
 
@@ -155,9 +156,11 @@ export default function Contact() {
 
         <div className="flex items-start">
           <div className="bg-green-100 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
-            <img 
+            <Image 
               src="/wechatLogo.png" 
               alt="WeChat Logo"
+              width={24}
+              height={24}
               className="w-5 h-5 sm:w-6 sm:h-6"
             />
           </div>
@@ -170,9 +173,11 @@ export default function Contact() {
                 {language === 'zh' ? '扫码添加微信' : 'Scan QR Code to Add WeChat'}
               </div>
               <div className="bg-white p-3 rounded-lg shadow-sm">
-                <img
+                <Image
                   src="/QRCode.png"
                   alt={language === 'zh' ? '微信二维码' : 'WeChat QR Code'}
+                  width={112}
+                  height={112}
                   className="w-24 h-24 sm:w-28 sm:h-28"
                 />
               </div>

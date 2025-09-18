@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../lib/translations';
 
@@ -28,10 +29,10 @@ export default function Footer() {
               {language === 'zh' ? '快速链接' : 'Quick Links'}
             </h4>
             <ul className="space-y-1 sm:space-y-2">
-              <li><a href="/" className="text-sm sm:text-base text-gray-300 hover:text-yellow-400 transition-colors duration-200">{t.nav.home}</a></li>
-              <li><a href="/about" className="text-sm sm:text-base text-gray-300 hover:text-yellow-400 transition-colors duration-200">{t.nav.about}</a></li>
-              <li><a href="/services" className="text-sm sm:text-base text-gray-300 hover:text-yellow-400 transition-colors duration-200">{t.nav.services}</a></li>
-              <li><a href="/contact" className="text-sm sm:text-base text-gray-300 hover:text-yellow-400 transition-colors duration-200">{t.nav.contact}</a></li>
+              <li><Link href="/" className="text-sm sm:text-base text-gray-300 hover:text-yellow-400 transition-colors duration-200">{t.nav.home}</Link></li>
+              <li><Link href="/about" className="text-sm sm:text-base text-gray-300 hover:text-yellow-400 transition-colors duration-200">{t.nav.about}</Link></li>
+              <li><Link href="/services" className="text-sm sm:text-base text-gray-300 hover:text-yellow-400 transition-colors duration-200">{t.nav.services}</Link></li>
+              <li><Link href="/contact" className="text-sm sm:text-base text-gray-300 hover:text-yellow-400 transition-colors duration-200">{t.nav.contact}</Link></li>
             </ul>
           </div>
 

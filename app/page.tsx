@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLanguage } from './hooks/useLanguage';
 import { translations } from './lib/translations';
 
@@ -90,9 +91,11 @@ export default function Home() {
               <div className="bg-white p-4 rounded-lg shadow-md">
                 <div className="flex items-center justify-center mb-3">
                   <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center">
-                    <img 
+        <Image
                       src="/wechatLogo.png" 
                       alt="WeChat Logo"
+                      width={24}
+                      height={24}
                       className="w-6 h-6"
                     />
                   </div>
@@ -101,9 +104,11 @@ export default function Home() {
                   {language === 'zh' ? '微信咨询' : 'WeChat'}
                 </h3>
                 <div className="text-center">
-                  <img 
+            <Image
                     src="/QRCode.png" 
                     alt={language === 'zh' ? '微信二维码' : 'WeChat QR Code'}
+                    width={64}
+                    height={64}
                     className="w-16 h-16 mx-auto mb-2"
                   />
                   <p className="text-xs text-gray-500">
@@ -215,9 +220,11 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 group">
               {/* 图片区域 */}
               <div className="h-64 bg-gradient-to-br from-yellow-50 to-orange-50 overflow-hidden relative">
-                <img 
+                <Image 
                   src="/huvongHung.png" 
                   alt="Hung Vuong Markets"
+                  width={400}
+                  height={256}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -265,9 +272,11 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 group">
               {/* 图片区域 */}
               <div className="h-64 bg-gradient-to-br from-pink-50 to-purple-50 overflow-hidden relative">
-                <img 
+          <Image
                   src="/artistry.png" 
                   alt="Artistry Spa"
+                  width={400}
+                  height={256}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -315,9 +324,11 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 group md:col-span-2 lg:col-span-1">
               {/* 图片区域 */}
               <div className="h-64 bg-gradient-to-br from-blue-50 to-cyan-50 overflow-hidden relative">
-                <img 
+                <Image 
                   src="/autoglass.png" 
                   alt="Auto Safe Glass"
+                  width={400}
+                  height={256}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -475,9 +486,11 @@ export default function Home() {
               {language === 'zh' ? '或微信扫码咨询' : 'Or scan WeChat QR Code'}
             </p>
             <div className="inline-block bg-white bg-opacity-20 p-3 rounded-lg">
-              <img 
+              <Image 
                 src="/QRCode.png" 
                 alt={language === 'zh' ? '微信二维码' : 'WeChat QR Code'}
+                width={80}
+                height={80}
                 className="w-20 h-20 mx-auto"
               />
             </div>
