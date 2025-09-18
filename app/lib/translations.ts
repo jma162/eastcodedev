@@ -8,7 +8,7 @@ export const translations = {
     },
     home: {
       title: '北美地区网站设计服务',
-      subtitle: '特价优惠进行中',
+      subtitle: '专业团队，质量保证',
       description: '专业公司网站建设，最快14天上线，质量保证。',
       cta: '马上定制'
     },

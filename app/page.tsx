@@ -35,15 +35,6 @@ export default function Home() {
       <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-orange-100">
       {/* Hero Section with Banner */}
       <section className="relative bg-gradient-to-br from-yellow-100 to-orange-200">
-        {/* Special Offer Banner */}
-        <div className="bg-red-600 text-white py-2 text-center">
-          <p className="text-xs sm:text-sm font-semibold">
-            {language === 'zh' 
-              ? '🔥 特价优惠：新客户可享受50% OFF + 免费定制域名 + 一年免费基础维护' 
-              : '🔥 Special Offer: 50% OFF for New Clients + Free Custom Domain + 1 Year Free Basic Maintenance'
-            }
-          </p>
-        </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           <div className="text-center">
@@ -496,7 +487,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-white bg-opacity-95 rounded-lg p-6 sm:p-8 mb-6 sm:mb-8 shadow-xl">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-red-600 mb-3 sm:mb-4">
-              {language === 'zh' ? '🔥 特价优惠进行中！' : '🔥 Special Offer Available!'}
+              {language === 'zh' ? '专业网站设计开发服务' : 'Professional Website Design & Development'}
             </h2>
             <div className="text-lg sm:text-xl md:text-2xl text-gray-800 font-bold mb-4">
               {language === 'zh' 
