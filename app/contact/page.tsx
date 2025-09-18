@@ -15,11 +15,38 @@ export default function Contact() {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // 这里可以添加表单提交逻辑
-    alert(language === 'zh' ? '感谢您的留言！我们会尽快回复。' : 'Thank you for your message! We will get back to you soon.');
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          language: language
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -78,7 +105,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent text-sm sm:text-base"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent text-sm sm:text-base text-black placeholder-gray-500"
                     placeholder={language === 'zh' ? '请输入您的姓名' : 'Enter your name'}
                   />
                 </div>
@@ -94,7 +121,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent text-sm sm:text-base"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent text-sm sm:text-base text-black placeholder-gray-500"
                     placeholder={language === 'zh' ? '请输入您的邮箱' : 'Enter your email'}
                   />
                 </div>
@@ -110,16 +137,37 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent text-sm sm:text-base"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent text-sm sm:text-base text-black placeholder-gray-500"
                     placeholder={language === 'zh' ? '请输入您的留言' : 'Enter your message'}
                   />
                 </div>
 
+                {/* Status Messages */}
+                {submitStatus === 'success' && (
+                  <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg mb-4">
+                    {language === 'zh' ? '消息发送成功！我们会尽快回复您。' : 'Message sent successfully! We will get back to you soon.'}
+                  </div>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg mb-4">
+                    {language === 'zh' ? '发送失败，请稍后重试或直接发送邮件至 ecd061924@gmail.com' : 'Failed to send message. Please try again later or email us directly at ecd061924@gmail.com'}
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full bg-yellow-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg font-semibold hover:bg-yellow-700 transition-colors duration-200 text-sm sm:text-base"
+                  disabled={isSubmitting}
+                  className={`w-full py-2 sm:py-3 px-4 sm:px-6 rounded-lg font-semibold transition-colors duration-200 text-sm sm:text-base ${
+                    isSubmitting
+                      ? 'bg-gray-400 text-gray-200 cursor-not-allowed'
+                      : 'bg-yellow-600 text-white hover:bg-yellow-700'
+                  }`}
                 >
-                  {t.contact.submit}
+                  {isSubmitting 
+                    ? (language === 'zh' ? '发送中...' : 'Sending...') 
+                    : t.contact.submit
+                  }
                 </button>
               </form>
             </div>

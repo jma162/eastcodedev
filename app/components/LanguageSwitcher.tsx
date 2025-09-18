@@ -1,20 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useLanguage } from '../hooks/useLanguage';
 
 export default function LanguageSwitcher() {
-  const [language, setLanguage] = useState('zh');
-
-  useEffect(() => {
-    // 从localStorage获取保存的语言设置
-    const savedLanguage = localStorage.getItem('language') || 'zh';
-    setLanguage(savedLanguage);
-  }, []);
+  const { language, changeLanguage } = useLanguage();
 
   const toggleLanguage = () => {
     const newLanguage = language === 'zh' ? 'en' : 'zh';
-    setLanguage(newLanguage);
-    localStorage.setItem('language', newLanguage);
+    changeLanguage(newLanguage);
     // 触发页面重新渲染
     window.location.reload();
   };
