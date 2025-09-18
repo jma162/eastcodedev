@@ -104,8 +104,8 @@ export default function Home() {
                 <h3 className="font-semibold text-gray-900 mb-2">
                   {language === 'zh' ? '邮件咨询' : 'Email'}
                 </h3>
-                <a href="mailto:info@eastcodedev.com" className="text-yellow-600 hover:text-yellow-700 font-medium text-sm">
-                  info@eastcodedev.com
+                <a href="mailto:ecd061924@gmail.com" className="text-yellow-600 hover:text-yellow-700 font-medium text-sm">
+                  ecd061924@gmail.com
                 </a>
               </div>
 

@@ -42,7 +42,7 @@ export default function Footer() {
               {language === 'zh' ? '联系信息' : 'Contact Info'}
             </h4>
             <div className="space-y-1 sm:space-y-2 text-gray-300">
-              <p className="text-sm sm:text-base">{t.contact.email}: <a href="mailto:info@eastcodedev.com" className="text-white hover:text-gray-300 transition-colors duration-200">info@eastcodedev.com</a></p>
+              <p className="text-sm sm:text-base">{t.contact.email}: <a href="mailto:ecd061924@gmail.com" className="text-white hover:text-gray-300 transition-colors duration-200">ecd061924@gmail.com</a></p>
               <p className="text-sm sm:text-base">{t.contact.phone}: <a href="tel:12154341280" className="text-white hover:text-gray-300 transition-colors duration-200">215-934-1280</a></p>
             </div>
           </div>

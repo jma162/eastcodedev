@@ -33,11 +33,11 @@ export default function Contact() {
     <>
       <Head>
         <title>联系我们 - EastCodeDev专业网站设计开发服务</title>
-        <meta name="description" content="联系EastCodeDev获取专业的网站设计开发服务。电话：215-934-1280，邮箱：info@eastcodedev.com，微信扫码咨询。专业团队为您提供免费咨询和项目报价。" />
+        <meta name="description" content="联系EastCodeDev获取专业的网站设计开发服务。电话：215-934-1280，邮箱：ecd061924@gmail.com，微信扫码咨询。专业团队为您提供免费咨询和项目报价。" />
         <meta name="keywords" content="联系我们,EastCodeDev联系方式,网站设计咨询,免费咨询,项目报价,电话咨询,微信咨询" />
         <link rel="canonical" href="https://eastcodedev.com/contact" />
         <meta property="og:title" content="联系我们 - EastCodeDev专业网站设计开发服务" />
-        <meta property="og:description" content="联系EastCodeDev获取专业的网站设计开发服务。电话：215-934-1280，邮箱：info@eastcodedev.com，微信扫码咨询。" />
+        <meta property="og:description" content="联系EastCodeDev获取专业的网站设计开发服务。电话：215-934-1280，邮箱：ecd061924@gmail.com，微信扫码咨询。" />
         <meta property="og:url" content="https://eastcodedev.com/contact" />
         <meta property="og:type" content="website" />
       </Head>
@@ -161,8 +161,8 @@ export default function Contact() {
                       {t.contact.emailLabel}
                     </h3>
                     <p className="text-sm sm:text-base text-gray-600">
-                      <a href="mailto:info@eastcodedev.com" className="text-blue-600 hover:text-blue-700 transition-colors duration-200 font-medium">
-                        info@eastcodedev.com
+                      <a href="mailto:ecd061924@gmail.com" className="text-blue-600 hover:text-blue-700 transition-colors duration-200 font-medium">
+                        ecd061924@gmail.com
                       </a>
                     </p>
                   </div>

@@ -39,7 +39,7 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
             },
             {
               "@type": "ContactPoint",
-              "email": "info@eastcodedev.com",
+              "email": "ecd061924@gmail.com",
               "contactType": "customer service",
               "availableLanguage": ["Chinese", "English"]
             }
@@ -148,7 +148,7 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
           "@context": "https://schema.org",
           "@type": "ContactPage",
           "name": "联系我们 - EastCodeDev",
-          "description": "联系EastCodeDev获取专业的网站设计开发服务。电话：215-934-1280，邮箱：info@eastcodedev.com，微信扫码咨询。",
+          "description": "联系EastCodeDev获取专业的网站设计开发服务。电话：215-934-1280，邮箱：ecd061924@gmail.com，微信扫码咨询。",
           "mainEntity": {
             "@type": "Organization",
             "name": "EastCodeDev",
@@ -161,7 +161,7 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
               },
               {
                 "@type": "ContactPoint",
-                "email": "info@eastcodedev.com",
+                "email": "ecd061924@gmail.com",
                 "contactType": "customer service",
                 "availableLanguage": ["Chinese", "English"]
               }
