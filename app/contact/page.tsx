@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../lib/translations';
+import Head from 'next/head';
+import StructuredData from '../components/StructuredData';
 
 export default function Contact() {
   const { language } = useLanguage();
@@ -28,7 +30,19 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <Head>
+        <title>联系我们 - EastCodeDev专业网站设计开发服务</title>
+        <meta name="description" content="联系EastCodeDev获取专业的网站设计开发服务。电话：215-934-1280，邮箱：info@eastcodedev.com，微信扫码咨询。专业团队为您提供免费咨询和项目报价。" />
+        <meta name="keywords" content="联系我们,EastCodeDev联系方式,网站设计咨询,免费咨询,项目报价,电话咨询,微信咨询" />
+        <link rel="canonical" href="https://eastcodedev.com/contact" />
+        <meta property="og:title" content="联系我们 - EastCodeDev专业网站设计开发服务" />
+        <meta property="og:description" content="联系EastCodeDev获取专业的网站设计开发服务。电话：215-934-1280，邮箱：info@eastcodedev.com，微信扫码咨询。" />
+        <meta property="og:url" content="https://eastcodedev.com/contact" />
+        <meta property="og:type" content="website" />
+      </Head>
+      <StructuredData type="contact" />
+      <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-yellow-600 to-orange-600 py-12 sm:py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -158,10 +172,12 @@ export default function Contact() {
           <div className="bg-green-100 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
             <Image 
               src="/wechatLogo.png" 
-              alt="WeChat Logo"
+              alt="微信咨询图标 - WeChat Logo"
               width={24}
               height={24}
               className="w-5 h-5 sm:w-6 sm:h-6"
+              priority={false}
+              loading="lazy"
             />
           </div>
           <div>
@@ -175,10 +191,12 @@ export default function Contact() {
               <div className="bg-white p-3 rounded-lg shadow-sm">
                 <Image
                   src="/QRCode.png"
-                  alt={language === 'zh' ? '微信二维码' : 'WeChat QR Code'}
+                  alt={language === 'zh' ? 'EastCodeDev微信二维码 - 扫码添加微信咨询' : 'EastCodeDev WeChat QR Code - Scan to add WeChat consultation'}
                   width={112}
                   height={112}
                   className="w-24 h-24 sm:w-28 sm:h-28"
+                  priority={false}
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -210,6 +228,7 @@ export default function Contact() {
         </div>
       </section>
 
-    </div>
+      </div>
+    </>
   );
 }

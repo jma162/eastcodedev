@@ -4,13 +4,35 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from './hooks/useLanguage';
 import { translations } from './lib/translations';
+import Head from 'next/head';
+import StructuredData from './components/StructuredData';
 
 export default function Home() {
   const { language } = useLanguage();
   const t = translations[language];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-orange-100">
+    <>
+      <Head>
+        <title>EastCodeDev - 专业网站设计开发服务 | 北美地区网站建设</title>
+        <meta name="description" content="EastCodeDev提供专业的网站设计开发服务，包括企业官网、电商平台、移动应用开发。北美地区专业团队，14天快速上线，质量保证。联系电话：215-934-1280" />
+        <meta name="keywords" content="网站设计,网站开发,网页设计,企业网站,电商网站,移动应用开发,北美网站设计,专业网站建设,网站优化,SEO优化,网站维护,EastCodeDev" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://eastcodedev.com" />
+        <meta property="og:title" content="EastCodeDev - 专业网站设计开发服务 | 北美地区网站建设" />
+        <meta property="og:description" content="EastCodeDev提供专业的网站设计开发服务，包括企业官网、电商平台、移动应用开发。北美地区专业团队，14天快速上线，质量保证。" />
+        <meta property="og:url" content="https://eastcodedev.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://eastcodedev.com/logo.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="EastCodeDev - 专业网站设计开发服务" />
+        <meta name="twitter:description" content="EastCodeDev提供专业的网站设计开发服务，包括企业官网、电商平台、移动应用开发。" />
+        <meta name="twitter:image" content="https://eastcodedev.com/logo.jpg" />
+      </Head>
+      <StructuredData type="organization" />
+      <StructuredData type="website" />
+      <StructuredData type="service" />
+      <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-orange-100">
       {/* Hero Section with Banner */}
       <section className="relative bg-gradient-to-br from-yellow-100 to-orange-200">
         {/* Special Offer Banner */}
@@ -93,10 +115,12 @@ export default function Home() {
                   <div className="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center">
         <Image
                       src="/wechatLogo.png" 
-                      alt="WeChat Logo"
+                      alt="微信咨询图标 - WeChat Logo"
                       width={24}
                       height={24}
                       className="w-6 h-6"
+                      priority={false}
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -106,10 +130,12 @@ export default function Home() {
                 <div className="text-center">
             <Image
                     src="/QRCode.png" 
-                    alt={language === 'zh' ? '微信二维码' : 'WeChat QR Code'}
+                    alt={language === 'zh' ? 'EastCodeDev微信二维码 - 扫码添加微信咨询' : 'EastCodeDev WeChat QR Code - Scan to add WeChat consultation'}
                     width={64}
                     height={64}
                     className="w-16 h-16 mx-auto mb-2"
+                    priority={false}
+                    loading="lazy"
                   />
                   <p className="text-xs text-gray-500">
                     {language === 'zh' ? '扫码添加' : 'Scan to add'}
@@ -130,8 +156,22 @@ export default function Home() {
             </h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-4">
               {language === 'zh' 
-                ? '从网站建设到移动应用，我们为各行各业提供专业的数字解决方案。'
-                : 'From website development to mobile apps, we provide professional digital solutions for all industries.'
+                ? (
+                  <>
+                    从网站建设到移动应用，我们为各行各业提供专业的数字解决方案。了解更多关于我们的{' '}
+                    <Link href="/about" className="text-yellow-600 hover:text-yellow-700 underline">专业团队</Link>
+                    {' '}和{' '}
+                    <Link href="/services" className="text-yellow-600 hover:text-yellow-700 underline">服务项目</Link>。
+                  </>
+                )
+                : (
+                  <>
+                    From website development to mobile apps, we provide professional digital solutions for all industries. Learn more about our{' '}
+                    <Link href="/about" className="text-yellow-600 hover:text-yellow-700 underline">professional team</Link>
+                    {' '}and{' '}
+                    <Link href="/services" className="text-yellow-600 hover:text-yellow-700 underline">service offerings</Link>.
+                  </>
+                )
               }
             </p>
           </div>
@@ -222,10 +262,12 @@ export default function Home() {
               <div className="h-64 bg-gradient-to-br from-yellow-50 to-orange-50 overflow-hidden relative">
                 <Image 
                   src="/huvongHung.png" 
-                  alt="Hung Vuong Markets"
+                  alt="恒发超市官方网站 - Hung Vuong Markets 多分店信息展示网站项目案例"
                   width={400}
                   height={256}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  priority={false}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 <div className="absolute top-4 right-4">
@@ -245,9 +287,9 @@ export default function Home() {
                     <span className="bg-orange-100 text-orange-800 px-3 py-1.5 rounded-full text-sm font-medium">电商</span>
                   </div>
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3">
+                <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3">
                   {language === 'zh' ? '恒发超市官方网站' : 'Hung Vuong Markets Official Website'}
-                </h3>
+                </h4>
                 <p className="text-gray-600 mb-3 sm:mb-4 text-xs sm:text-sm">
                   {language === 'zh' 
                     ? '多分店信息展示、每周特惠活动、商铺租赁等完整功能。'
@@ -274,10 +316,12 @@ export default function Home() {
               <div className="h-64 bg-gradient-to-br from-pink-50 to-purple-50 overflow-hidden relative">
           <Image
                   src="/artistry.png" 
-                  alt="Artistry Spa"
+                  alt="Artistry Spa 美容中心网站项目案例 - 服务展示和在线预约系统"
                   width={400}
                   height={256}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  priority={false}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 <div className="absolute top-4 right-4">
@@ -297,9 +341,9 @@ export default function Home() {
                     <span className="bg-purple-100 text-purple-800 px-3 py-1.5 rounded-full text-sm font-medium">美容</span>
                   </div>
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3">
+                <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3">
                   {language === 'zh' ? 'Artistry Spa 美容中心' : 'Artistry Spa Wellness Center'}
-                </h3>
+                </h4>
                 <p className="text-gray-600 mb-3 sm:mb-4 text-xs sm:text-sm">
                   {language === 'zh' 
                     ? '服务展示、在线预约系统、客户评价等完整功能。'
@@ -326,10 +370,12 @@ export default function Home() {
               <div className="h-64 bg-gradient-to-br from-blue-50 to-cyan-50 overflow-hidden relative">
                 <Image 
                   src="/autoglass.png" 
-                  alt="Auto Safe Glass"
+                  alt="Auto Safe Glass 汽车玻璃服务网站项目案例 - 上门服务和保险协助"
                   width={400}
                   height={256}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  priority={false}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 <div className="absolute top-4 right-4">
@@ -349,9 +395,9 @@ export default function Home() {
                     <span className="bg-cyan-100 text-cyan-800 px-3 py-1.5 rounded-full text-sm font-medium">保险</span>
                   </div>
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3">
+                <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3">
                   {language === 'zh' ? 'Auto Safe Glass 汽车玻璃' : 'Auto Safe Glass Auto Glass Service'}
-                </h3>
+                </h4>
                 <p className="text-gray-600 mb-3 sm:mb-4 text-xs sm:text-sm">
                   {language === 'zh' 
                     ? '专业汽车玻璃服务网站，包含上门服务、保险协助、终身保修等功能。'
@@ -488,15 +534,18 @@ export default function Home() {
             <div className="inline-block bg-white bg-opacity-20 p-3 rounded-lg">
               <Image 
                 src="/QRCode.png" 
-                alt={language === 'zh' ? '微信二维码' : 'WeChat QR Code'}
+                alt={language === 'zh' ? 'EastCodeDev微信二维码 - 扫码咨询网站设计服务' : 'EastCodeDev WeChat QR Code - Scan to consult web design services'}
                 width={80}
                 height={80}
                 className="w-20 h-20 mx-auto"
+                priority={false}
+                loading="lazy"
               />
             </div>
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
