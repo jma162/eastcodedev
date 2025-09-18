@@ -50,7 +50,7 @@ export const translations = {
     },
     footer: {
       rights: '版权所有',
-      year: '2024'
+      year: '2025'
     }
   },
   en: {
@@ -108,7 +108,7 @@ export const translations = {
     },
     footer: {
       rights: 'All rights reserved',
-      year: '2024'
+      year: '2025'
     }
   }
 };
