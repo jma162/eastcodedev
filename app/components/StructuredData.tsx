@@ -71,11 +71,6 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
             "name": "EastCodeDev",
             "url": "https://eastcodedev.com"
           },
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://eastcodedev.com/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
         };
 
       case 'service':
