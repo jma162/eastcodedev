@@ -46,10 +46,6 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://eastcodedev.com'),
   alternates: {
     canonical: '/',
-    languages: {
-      'zh-CN': '/zh',
-      'en-US': '/en',
-    },
   },
   openGraph: {
     type: 'website',
@@ -60,7 +56,7 @@ export const metadata: Metadata = {
     description: 'EastCodeDev提供专业的网站设计开发服务，包括企业官网、电商平台、移动应用开发。北美地区专业团队，14天快速上线，质量保证。',
     images: [
       {
-        url: '/logo.jpg',
+        url: '/next.svg',
         width: 1200,
         height: 630,
         alt: 'EastCodeDev - 专业网站设计开发服务',
@@ -71,7 +67,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'EastCodeDev - 专业网站设计开发服务',
     description: 'EastCodeDev提供专业的网站设计开发服务，包括企业官网、电商平台、移动应用开发。',
-    images: ['/logo.jpg'],
+    images: ['/next.svg'],
   },
   robots: {
     index: true,

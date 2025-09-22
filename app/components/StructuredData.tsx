@@ -22,7 +22,7 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
           "name": "EastCodeDev",
           "alternateName": "East Code Development",
           "url": "https://eastcodedev.com",
-          "logo": "https://eastcodedev.com/logo.jpg",
+          "logo": "https://eastcodedev.com/next.svg",
           "description": "EastCodeDev提供专业的网站设计开发服务，包括企业官网、电商平台、移动应用开发。北美地区专业团队，14天快速上线，质量保证。",
           "foundingDate": "2020",
           "address": {

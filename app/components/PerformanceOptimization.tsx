@@ -12,7 +12,7 @@ export default function PerformanceOptimization() {
       <link rel="dns-prefetch" href="//www.googletagmanager.com" />
       
       {/* Preload critical resources */}
-      <link rel="preload" href="/logo.jpg" as="image" type="image/jpeg" />
+      <link rel="preload" href="/next.svg" as="image" type="image/svg+xml" />
       
       {/* Resource hints */}
       <link rel="prefetch" href="/about" />
