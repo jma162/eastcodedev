@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from './hooks/useLanguage';
 import { translations } from './lib/translations';
-import Head from 'next/head';
 import StructuredData from './components/StructuredData';
 
 export default function Home() {
@@ -13,22 +12,6 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>EastCodeDev - 专业网站设计开发服务 | 北美地区网站建设</title>
-        <meta name="description" content="EastCodeDev提供专业的网站设计开发服务，包括企业官网、电商平台、移动应用开发。北美地区专业团队，14天快速上线，质量保证。联系电话：215-934-1280" />
-        <meta name="keywords" content="网站设计,网站开发,网页设计,企业网站,电商网站,移动应用开发,北美网站设计,专业网站建设,网站优化,SEO优化,网站维护,EastCodeDev" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://eastcodedev.com" />
-        <meta property="og:title" content="EastCodeDev - 专业网站设计开发服务 | 北美地区网站建设" />
-        <meta property="og:description" content="EastCodeDev提供专业的网站设计开发服务，包括企业官网、电商平台、移动应用开发。北美地区专业团队，14天快速上线，质量保证。" />
-        <meta property="og:url" content="https://eastcodedev.com" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://eastcodedev.com/next.svg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="EastCodeDev - 专业网站设计开发服务" />
-        <meta name="twitter:description" content="EastCodeDev提供专业的网站设计开发服务，包括企业官网、电商平台、移动应用开发。" />
-        <meta name="twitter:image" content="https://eastcodedev.com/next.svg" />
-      </Head>
       <StructuredData type="organization" />
       <StructuredData type="website" />
       <StructuredData type="service" />

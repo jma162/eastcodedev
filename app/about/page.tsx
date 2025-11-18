@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../lib/translations';
-import Head from 'next/head';
 
 export default function About() {
   const { language } = useLanguage();
@@ -11,16 +10,6 @@ export default function About() {
 
   return (
     <>
-      <Head>
-        <title>关于我们 - EastCodeDev专业网站设计团队</title>
-        <meta name="description" content="了解EastCodeDev专业网站设计团队，我们拥有丰富的网页设计和开发经验，致力于为客户提供创新的数字解决方案。专业团队，优质服务。" />
-        <meta name="keywords" content="关于我们,EastCodeDev团队,网站设计团队,网页开发团队,专业团队,优质服务,数字解决方案" />
-        <link rel="canonical" href="https://eastcodedev.com/about" />
-        <meta property="og:title" content="关于我们 - EastCodeDev专业网站设计团队" />
-        <meta property="og:description" content="了解EastCodeDev专业网站设计团队，我们拥有丰富的网页设计和开发经验，致力于为客户提供创新的数字解决方案。" />
-        <meta property="og:url" content="https://eastcodedev.com/about" />
-        <meta property="og:type" content="website" />
-      </Head>
       <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-yellow-600 to-orange-600 py-12 sm:py-16 md:py-20">

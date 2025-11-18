@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../lib/translations';
-import Head from 'next/head';
 
 export default function Services() {
   const { language } = useLanguage();
@@ -11,16 +10,6 @@ export default function Services() {
 
   return (
     <>
-      <Head>
-        <title>我们的服务 - EastCodeDev专业网站设计开发服务</title>
-        <meta name="description" content="EastCodeDev提供全面的数字解决方案，包括网站设计、移动应用开发、电商网站、餐厅订餐系统、美容美发预约等专业服务。多种行业模板，快速上线。" />
-        <meta name="keywords" content="网站设计服务,移动应用开发,电商网站,餐厅订餐系统,美容美发预约,网站模板,数字解决方案,专业服务" />
-        <link rel="canonical" href="https://eastcodedev.com/services" />
-        <meta property="og:title" content="我们的服务 - EastCodeDev专业网站设计开发服务" />
-        <meta property="og:description" content="EastCodeDev提供全面的数字解决方案，包括网站设计、移动应用开发、电商网站、餐厅订餐系统等专业服务。" />
-        <meta property="og:url" content="https://eastcodedev.com/services" />
-        <meta property="og:type" content="website" />
-      </Head>
       <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-yellow-600 to-orange-600 py-12 sm:py-16 md:py-20">
