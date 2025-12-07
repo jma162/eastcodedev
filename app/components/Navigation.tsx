@@ -1,18 +1,55 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../lib/translations';
 import LanguageSwitcher from './LanguageSwitcher';
+import { useEstimate } from '../contexts/EstimateContext';
+import { usePathname } from 'next/navigation';
 
 export default function Navigation() {
   const { language } = useLanguage();
   const t = translations[language];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { setShowEstimateForm } = useEstimate();
+  const pathname = usePathname();
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  const handleEstimateClick = () => {
+    setIsMobileMenuOpen(false);
+    if (pathname !== '/') {
+      window.location.href = '/#estimate';
+    } else {
+      setShowEstimateForm(true);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  // 点击外部区域关闭菜单
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    if (isMobileMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
+
+  // 路由变化时关闭菜单
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
 
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50">
+    <nav className="bg-white shadow-lg sticky top-0 z-50" ref={menuRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
                   {/* Logo */}
@@ -54,6 +91,13 @@ export default function Navigation() {
 
           {/* Language Switcher */}
           <div className="flex items-center space-x-4">
+            {/* Quick Estimate Button */}
+            <button
+              onClick={handleEstimateClick}
+              className="hidden md:block px-4 py-2 bg-yellow-600 text-white font-semibold text-sm rounded-lg hover:shadow-lg hover:bg-yellow-700 transition-all duration-300 hover:scale-105"
+            >
+              {language === 'zh' ? '快速估价' : 'Get Estimate'}
+            </button>
             <LanguageSwitcher />
             
             {/* Mobile menu button */}
@@ -129,6 +173,12 @@ export default function Navigation() {
                        >
                          {t.nav.contact}
                        </Link>
+                       <button
+                         onClick={handleEstimateClick}
+                         className="w-full text-left text-gray-700 hover:text-yellow-600 block px-3 py-2 rounded-md text-lg font-medium bg-yellow-600 text-white hover:bg-yellow-700 hover:shadow-lg transition-all duration-300"
+                       >
+                         {language === 'zh' ? '快速估价' : 'Get Estimate'}
+                       </button>
                      </div>
                    </div>
                  )}

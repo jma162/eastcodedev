@@ -140,7 +140,7 @@ export default function Contact() {
                 
                 {submitStatus === 'error' && (
                   <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg mb-4">
-                    {language === 'zh' ? '发送失败，请稍后重试或直接发送邮件至 ecd061924@gmail.com' : 'Failed to send message. Please try again later or email us directly at ecd061924@gmail.com'}
+                    {language === 'zh' ? '发送失败，请稍后重试或直接发送邮件至 info@eastcodedev.com' : 'Failed to send message. Please try again later or email us directly at info@eastcodedev.com'}
                   </div>
                 )}
 
@@ -198,8 +198,8 @@ export default function Contact() {
                       {t.contact.emailLabel}
                     </h3>
                     <p className="text-sm sm:text-base text-gray-600">
-                      <a href="mailto:ecd061924@gmail.com" className="text-blue-600 hover:text-blue-700 transition-colors duration-200 font-medium">
-                        ecd061924@gmail.com
+                      <a href="mailto:info@eastcodedev.com" className="text-blue-600 hover:text-blue-700 transition-colors duration-200 font-medium">
+                        info@eastcodedev.com
                       </a>
                     </p>
                   </div>

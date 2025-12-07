@@ -7,9 +7,9 @@ export const translations = {
       contact: '联系我们'
     },
     home: {
-      title: '北美地区网站设计服务',
-      subtitle: '专业团队，质量保证',
-      description: '专业公司网站建设，最快14天上线，质量保证。',
+      title: '专业网站设计服务',
+      subtitle: '费城纽约网站设计公司',
+      description: '专业网站设计，企业网站设计，最快14天上线，质量保证。',
       cta: '马上定制'
     },
     about: {
@@ -61,9 +61,9 @@ export const translations = {
       contact: 'Contact'
     },
     home: {
-      title: 'North American Regional Website Design Services',
-      subtitle: 'Special Offer Available',
-      description: 'Professional corporate website development, launch in 14 days, quality guaranteed.',
+      title: 'Professional Web Design Services',
+      subtitle: 'Philadelphia New York Web Design Company',
+      description: 'Professional web design, corporate website design, launch in 14 days, quality guaranteed.',
       cta: 'Start Customizing'
     },
     about: {

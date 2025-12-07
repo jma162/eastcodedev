@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLanguage } from '../hooks/useLanguage';
 import { translations } from '../lib/translations';
 
@@ -41,9 +42,27 @@ export default function Footer() {
             <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">
               {language === 'zh' ? '联系信息' : 'Contact Info'}
             </h4>
-            <div className="space-y-1 sm:space-y-2 text-gray-300">
-              <p className="text-sm sm:text-base">{t.contact.email}: <a href="mailto:ecd061924@gmail.com" className="text-white hover:text-gray-300 transition-colors duration-200">ecd061924@gmail.com</a></p>
+            <div className="space-y-1 sm:space-y-2 text-gray-300 mb-4">
+              <p className="text-sm sm:text-base">{t.contact.email}: <a href="mailto:info@eastcodedev.com" className="text-white hover:text-gray-300 transition-colors duration-200">info@eastcodedev.com</a></p>
               <p className="text-sm sm:text-base">{t.contact.phone}: <a href="tel:12154341280" className="text-white hover:text-gray-300 transition-colors duration-200">215-934-1280</a></p>
+            </div>
+            {/* WeChat QR Code */}
+            <div className="mt-4">
+              <p className="text-sm sm:text-base text-gray-300 mb-2">
+                {language === 'zh' ? '微信咨询' : 'WeChat Consultation'}
+              </p>
+              <div className="inline-block bg-white/10 backdrop-blur-sm p-2 rounded-lg border border-gray-700">
+                <Image 
+                  src="/QRCode.png" 
+                  alt={language === 'zh' ? 'EastCodeDev微信二维码' : 'EastCodeDev WeChat QR Code'}
+                  width={100}
+                  height={100}
+                  className="w-20 h-20 sm:w-24 sm:h-24 rounded"
+                  quality={90}
+                  loading="lazy"
+                  sizes="(max-width: 640px) 80px, 96px"
+                />
+              </div>
             </div>
           </div>
         </div>

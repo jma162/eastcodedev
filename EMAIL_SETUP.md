@@ -6,25 +6,33 @@
 
 ```bash
 # 在项目根目录创建 .env.local 文件
-EMAIL_USER=ecd061924@gmail.com
-EMAIL_PASS=your_gmail_app_password_here
+EMAIL_USER=info@eastcodedev.com
+EMAIL_PASS=your_hostinger_email_password
+SMTP_HOST=smtp.hostinger.com
+SMTP_PORT=465
 ```
 
-## Gmail 应用密码设置
+## Hostinger 邮箱配置
 
-1. 登录到您的 Gmail 账户 (ecd061924@gmail.com)
-2. 前往 [Google 账户设置](https://myaccount.google.com/)
-3. 点击 "安全性" 标签
-4. 在 "登录 Google" 部分，点击 "两步验证"（如果未启用，请先启用）
-5. 在 "两步验证" 页面底部，点击 "应用密码"
-6. 选择 "邮件" 作为应用类型
-7. 选择 "其他" 作为设备类型，输入 "EastCodeDev Website"
-8. 点击 "生成" 获取应用密码
-9. 将生成的应用密码复制到 `.env.local` 文件的 `EMAIL_PASS` 变量中
+1. 登录到您的 Hostinger 账户
+2. 前往邮箱管理页面
+3. 确保您的邮箱账户已创建并激活
+4. 使用您的完整邮箱地址作为 `EMAIL_USER`
+5. 使用您的邮箱密码作为 `EMAIL_PASS`
+
+### SMTP 设置说明
+
+- **SMTP 服务器：** smtp.hostinger.com
+- **端口：** 465 (SSL) 或 587 (TLS)
+- **加密方式：** SSL (端口 465) 或 TLS (端口 587)
+- **用户名：** 您的完整邮箱地址（例如：info@eastcodedev.com）
+- **密码：** 您的邮箱账户密码
+
+**注意：** 如果使用端口 587 (TLS)，请在代码中将 `secure: true` 改为 `secure: false`
 
 ## 功能说明
 
-- 联系表单现在会将消息发送到 `ecd061924@gmail.com`
+- 联系表单现在会将消息发送到 `info@eastcodedev.com`
 - 邮件包含发送者的姓名、邮箱、消息内容和时间戳
 - 支持中英文双语界面
 - 包含发送状态反馈（成功/失败）
@@ -36,7 +44,7 @@ EMAIL_PASS=your_gmail_app_password_here
 1. 运行 `npm run dev` 启动开发服务器
 2. 访问 `/contact` 页面
 3. 填写并提交联系表单
-4. 检查 `ecd061924@gmail.com` 邮箱是否收到邮件
+4. 检查 `info@eastcodedev.com` 邮箱是否收到邮件
 
 ## 故障排除
 

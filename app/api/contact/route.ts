@@ -3,12 +3,42 @@ import nodemailer from 'nodemailer';
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, message, language = 'zh' } = await request.json();
+    const body = await request.json();
+    const { name, email, message, language = 'zh' } = body;
+
+    console.log('Received request:', { name, email, messageLength: message?.length, language });
 
     // 验证必填字段
-    if (!name || !email || !message) {
+    if (!name || !name.trim()) {
+      console.error('Missing name');
       return NextResponse.json(
-        { error: 'Name, email, and message are required' },
+        { error: 'Name is required' },
+        { status: 400 }
+      );
+    }
+
+    if (!email || !email.trim()) {
+      console.error('Missing email');
+      return NextResponse.json(
+        { error: 'Email is required' },
+        { status: 400 }
+      );
+    }
+
+    // 验证邮箱格式
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      console.error('Invalid email format');
+      return NextResponse.json(
+        { error: 'Invalid email format' },
+        { status: 400 }
+      );
+    }
+
+    if (!message || !message.trim()) {
+      console.error('Missing message');
+      return NextResponse.json(
+        { error: 'Message is required' },
         { status: 400 }
       );
     }
@@ -30,19 +60,21 @@ export async function POST(request: NextRequest) {
       footer3: 'Customer Email / 客户邮箱'
     };
 
-    // 创建邮件传输器
+    // 创建邮件传输器 - Hostinger SMTP配置
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: process.env.SMTP_HOST || 'smtp.hostinger.com',
+      port: parseInt(process.env.SMTP_PORT || '465'),
+      secure: true, // 使用 SSL (端口 465) 或 false 使用 TLS (端口 587)
       auth: {
-        user: process.env.EMAIL_USER, // ecd061924@gmail.com
-        pass: process.env.EMAIL_PASS, // Gmail应用密码
+        user: process.env.EMAIL_USER, // info@eastcodedev.com
+        pass: process.env.EMAIL_PASS, // Hostinger 邮箱密码
       },
     });
 
     // 邮件内容
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: 'ecd061924@gmail.com',
+      to: 'info@eastcodedev.com',
       replyTo: email, // 设置回复地址为客户邮箱
       subject: emailContent.subject,
       html: `
@@ -96,8 +128,23 @@ ${emailContent.footer3}: ${email}
     );
   } catch (error) {
     console.error('Error sending email:', error);
+    
+    // 检查是否是环境变量问题
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      console.error('Missing email configuration:', {
+        hasEmailUser: !!process.env.EMAIL_USER,
+        hasEmailPass: !!process.env.EMAIL_PASS
+      });
+      return NextResponse.json(
+        { error: 'Email configuration is missing. Please check .env.local file.' },
+        { status: 500 }
+      );
+    }
+
+    // 返回更详细的错误信息
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     return NextResponse.json(
-      { error: 'Failed to send message' },
+      { error: `Failed to send message: ${errorMessage}` },
       { status: 500 }
     );
   }
