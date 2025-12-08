@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://eastcodedev.com'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://eastcodedev.com/',
   },
   other: {
     'geo.region': 'US-PA,US-NY,US-NJ',

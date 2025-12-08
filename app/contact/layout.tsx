@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "微信咨询"
   ],
   alternates: {
-    canonical: '/contact',
+    canonical: 'https://eastcodedev.com/contact',
   },
   openGraph: {
     title: "联系我们 - EastCodeDev专业网站设计开发服务",

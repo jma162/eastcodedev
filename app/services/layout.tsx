@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "专业服务"
   ],
   alternates: {
-    canonical: '/services',
+    canonical: 'https://eastcodedev.com/services',
   },
   openGraph: {
     title: "我们的服务 - EastCodeDev专业网站设计开发服务",

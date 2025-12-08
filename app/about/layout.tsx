@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "数字解决方案"
   ],
   alternates: {
-    canonical: '/about',
+    canonical: 'https://eastcodedev.com/about',
   },
   openGraph: {
     title: "关于我们 - EastCodeDev专业网站设计团队",
