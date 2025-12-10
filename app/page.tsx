@@ -195,61 +195,8 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Foundation Package Highlight with QR Code */}
-            <div className="flex flex-col lg:flex-row justify-center items-center gap-6 sm:gap-8 mb-8 sm:mb-10 px-2">
-              {/* Foundation Package Card */}
-              <div className="w-full max-w-lg bg-white/10 backdrop-blur-md border-2 border-yellow-400/50 rounded-2xl px-4 sm:px-6 py-5 sm:py-6 shadow-2xl shadow-yellow-500/20">
-                <div className="text-center mb-4">
-                  <div className="inline-block bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">
-                    {language === 'zh' ? '基础套餐' : 'Foundation Package'}
-                  </div>
-                  <h3 className="text-white text-xl sm:text-2xl font-bold mb-3">
-                    {language === 'zh' ? '专业网站，为增长而建' : 'Your professional website, built for growth'}
-                  </h3>
-                </div>
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div className="text-center sm:text-left w-full sm:w-auto">
-                    <div className="flex items-baseline justify-center sm:justify-start gap-2 mb-2">
-                      <span className="text-white/50 line-through text-base sm:text-lg">
-                        $1,499
-                      </span>
-                      <span className="text-3xl sm:text-4xl font-bold text-yellow-300">
-                        $1,099
-                      </span>
-                    </div>
-                    <div className="text-white/80 text-xs sm:text-sm">
-                      {language === 'zh' ? '限时优惠价格' : 'Limited Time Offer'}
-                    </div>
-                  </div>
-                  <div className="hidden sm:block h-16 w-px bg-white/20 flex-shrink-0"></div>
-                  <div className="text-center sm:text-left w-full sm:w-auto">
-                    <div className="text-white text-sm sm:text-base font-medium mb-2">
-                      {language === 'zh' ? '定制4页面网站' : 'Custom 4-Page Website'}
-                    </div>
-                    <div className="text-white/70 text-xs">
-                      {language === 'zh' 
-                        ? '首页 / 关于我们 / 服务 / 联系我们' 
-                        : 'Home / About / Services / Contact'}
-                    </div>
-                    <div className="text-white/60 text-xs mt-1">
-                      {language === 'zh' ? '响应式设计 + SEO优化 + 7天上线' : 'Responsive + SEO + Launch in 7 Days'}
-                    </div>
-                    <div className="flex items-center justify-center sm:justify-start gap-2 mt-2 pt-2 border-t border-white/20">
-                      <svg className="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                      </svg>
-                      <svg className="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                      <span className="text-yellow-400 text-xs font-semibold">
-                        {language === 'zh' ? '开发一次，手机电脑通用' : 'One Development, Mobile & Desktop'}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* WeChat QR Code */}
+            {/* WeChat QR Code */}
+            <div className="flex justify-center items-center mb-8 sm:mb-10 px-2">
               <div className="text-center">
                 <p className="text-white/90 text-sm sm:text-base mb-3 sm:mb-4 font-medium">
                   {language === 'zh' ? '微信扫码咨询' : 'Scan WeChat QR Code'}
@@ -561,17 +508,9 @@ export default function Home() {
             {/* Package 1: Foundation */}
             <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 sm:p-8 hover:border-yellow-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-500/20">
               <div className="mb-6">
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
                   {language === 'zh' ? '基础套餐' : 'Foundation'}
                 </h3>
-                <div className="flex items-baseline gap-3 mb-4">
-                  <span className="text-gray-400 line-through text-xl sm:text-2xl">
-                    $1,499
-                  </span>
-                  <span className="text-3xl sm:text-4xl font-bold text-yellow-400">
-                    $1,099
-                  </span>
-                </div>
                 <p className="text-yellow-300 text-sm sm:text-base leading-relaxed">
                   {language === 'zh' 
                     ? '专为初创企业和需要建立专业在线形象的小型公司设计。'
@@ -644,17 +583,9 @@ export default function Home() {
                 </span>
               </div>
               <div className="mb-6">
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
                   {language === 'zh' ? '升级套餐' : 'Elevate'}
                 </h3>
-                <div className="flex items-baseline gap-3 mb-4">
-                  <span className="text-gray-400 line-through text-xl sm:text-2xl">
-                    $2,299
-                  </span>
-                  <span className="text-3xl sm:text-4xl font-bold text-yellow-400">
-                    $1,899
-                  </span>
-                </div>
                 <p className="text-yellow-300 text-sm sm:text-base leading-relaxed">
                   {language === 'zh' 
                     ? '专为正在扩张并希望建立稳定客户来源的企业打造。'
@@ -718,9 +649,6 @@ export default function Home() {
                   {language === 'zh' ? '维护套餐' : 'Maintain'}
                 </h3>
                 <div className="flex items-baseline gap-3 mb-4">
-                  <span className="text-gray-400 line-through text-xl sm:text-2xl">
-                    $350<span className="text-base text-gray-500">/{language === 'zh' ? '月' : 'mo'}</span>
-                  </span>
                   <span className="text-3xl sm:text-4xl font-bold text-yellow-400">
                     $250<span className="text-lg sm:text-xl text-gray-400">/{language === 'zh' ? '月' : 'month'}</span>
                   </span>
