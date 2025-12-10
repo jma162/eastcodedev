@@ -8,7 +8,7 @@ export const translations = {
     },
     home: {
       title: '专业网站设计服务',
-      subtitle: '费城纽约网站设计公司',
+      subtitle: '北美网站设计公司',
       description: '专业网站设计，企业网站设计，最快14天上线，质量保证。',
       cta: '马上定制'
     },
